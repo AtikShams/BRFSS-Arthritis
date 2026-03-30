@@ -1,0 +1,29 @@
+# ==========================================
+# ARTHRITIS PREDICTION PIPELINE CONFIGURATION
+# ==========================================
+
+paths:
+  # Base directory for Google Colab / Google Drive
+  base_dir: "/content/drive/MyDrive/Arthritis version 2/BRFSS 2021/"
+  
+  # Input Data Paths (Relative to base_dir)
+  train_path: "GAN filling method/Resampled Datasets/3-BRFSS 2021 - Fill GAN RUS (processed).csv"
+  test_features_path: "GAN filling method/Test_Imputed_GAN_Processed.csv"
+  original_test_path: "BRFSS_2021_Test.csv"
+  
+  # Output Paths (Relative to base_dir)
+  cm_dir: "GAN filling method/Confusion Matrices/"
+  excel_output_path: "Performance_of_all_models.xlsx"
+
+experiment_tracking:
+  data_name: "GAN Imputation"
+  sampling_name: "RUS"
+
+deep_learning_parameters:
+  epochs: 10
+  batch_size: 256
+  
+machine_learning_parameters:
+  random_state: 42
+  cv_folds: 5
+  n_jobs: -1
